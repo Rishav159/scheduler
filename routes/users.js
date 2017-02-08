@@ -25,7 +25,7 @@ router.post('/signup', function(req, res, next) {
       res.status = 502;
       res.send(err);
     }else{
-      res.redirect('/signedup');
+      res.redirect('/success');
     }
   });
 });
