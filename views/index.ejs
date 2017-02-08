@@ -64,17 +64,18 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-username">Email</label>
-				                        	<input type="text" name="form-username" placeholder="Email..." class="form-username form-control" id="form-username">
+	                            <form role="form" action="/users/signin" method="post" class="login-form">
+	                    	        <div class="form-group">
+				                    		  <label class="sr-only" for="login-email">Email</label>
+				                        	<input type="email" required="true" name="email" placeholder="Email..." class="email form-control" id="login-email">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        	<label class="sr-only" for="login-pass">Password</label>
+				                        	<input type="password" required="true" name="pass" placeholder="Password..." class="pass form-control" id="login-pass">
 				                        </div>
 				                        <button type="submit" class="btn">Sign in!</button>
-				                    </form>
+		                          </form>
+                            <p style="text-align:center; margin-top:10px"><a href="/passwordreset">Forgot password? Click here!</a></p>
 			                    </div>
 		                    </div>
 
@@ -96,27 +97,27 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="name">Name</label>
-				                        	<input type="text" name="name" placeholder="Name..." class="name form-control" id="name">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="email">Email</label>
-				                        	<input type="text" name="email" placeholder="Email..." class="email form-control" id="email">
-				                        </div>
-                                <div class="form-group">
-				                        	<label class="sr-only" for="pass">Password</label>
-				                        	<input type="text" name="pass" placeholder="Password..." class="pass form-control" id="pass">
-				                        </div>
-                                <div class="form-group">
-				                        	<label class="sr-only" for="conf_pass">Confirm Password</label>
-				                        	<input type="text" name="conf_pass" placeholder="Confirm Password..." class="conf_pass form-control" id="conf_pass">
-				                        </div>
-				                        <button type="submit" class="btn">Sign me up!</button>
-				                    </form>
-			                    </div>
-                        	</div>
+                                <form role="form" action="/users/signin" method="post" class="login-form">
+                                  <div class="form-group">
+                                    <label class="sr-only" for="name">Name</label>
+                                    <input type="text" required="true" name="name" placeholder="Name..." class="name form-control" id="name">
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label>
+                                    <input type="email" required="true" name="email" placeholder="Email..." class="email form-control" id="email">
+                                  </div>
+                                  <div class="form-group">
+    				                    		  <label class="sr-only" for="phone">Phone</label>
+    				                        	<input type="text" required="true" name="phone" placeholder="Phone..." class="phone form-control" id="phone">
+			                            </div>
+  				                        <div class="form-group">
+    				                        	<label class="sr-only" for="pass">Password</label>
+    				                        	<input type="password" required="true" name="pass" placeholder="Password..." class="pass form-control" id="pass">
+  				                        </div>
+  				                        <button type="submit" class="btn">Sign in!</button>
+    				                    </form>
+	                            </div>
+                      	  </div>
 
                         </div>
                     </div>

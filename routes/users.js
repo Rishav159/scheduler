@@ -15,17 +15,19 @@ router.post('/signup', function(req, res, next) {
   var newUser = new User({
     email : req.body.email,
     name : req.body.name,
-    pass : req.body.pass,
-    dept : req.body.dept,
-    contact : req.body.contact,
-    classes : req.body.classes
+    phone : req.body.phone,
+    pass : req.body.pass
   });
   newUser.save(function (err, user) {
     if (err){
       res.status = 502;
       res.send(err);
     }else{
-      res.redirect('/success');
+      req.session.user = {};
+      req.session.user.id = user._id;
+      req.session.user.name = user.name;
+      req.session.user.email = user.email;
+      res.redirect('/update');
     }
   });
 });

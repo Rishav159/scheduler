@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var expressLayouts = require('express-ejs-layouts');
 var session = require('express-session')
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/codencounter');
+mongoose.connect('mongodb://localhost/scheduler');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

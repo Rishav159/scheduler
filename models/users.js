@@ -9,8 +9,8 @@ var userSchema = mongoose.Schema({
   email: {type:String, required:true, unique:true},
   name: {type:String, required:true},
   pass: {type:String, required:true},
-  dept: {type:String, required:true},
-  contact: {type:Number , required:true},
+  phone: {type:String, required:true},
+  dept: String,
   classes: Object
 });
 
