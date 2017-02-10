@@ -8,7 +8,17 @@ router.post('/signup', function(req, res, next) {
     email : req.body.email,
     name : req.body.name,
     phone : req.body.phone,
-    pass : req.body.pass
+    pass : req.body.pass,
+    is_updated:false,
+    schedule : {
+      "monday":[],
+      "tuesday":[],
+      "wednesday":[],
+      "thursday":[],
+      "friday":[],
+      "saturday":[],
+      "sunday":[]
+    }
   });
   newUser.save(function (err, user) {
     if (err){
@@ -54,6 +64,10 @@ router.post('/signin',function(req,res,next){
       }
     }
   });
+});
+
+router.post('/updatedetails', function(req, res, next) {
+  res.render('update');
 });
 
 router.get('/signout',function(req,res,next){

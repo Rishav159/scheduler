@@ -11,9 +11,12 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.get('/updatedetails', function(req, res, next) {
-  res.render('update');
-});
+router.get('/update_profile',function(req,res,next){
+  res.render('profile')
+})
+router.get('/update_schedule',function(req,res,next){
+  res.render('schedule')
+})
 
 router.get('/passwordreset', function(req, res, next) {
   res.render('reset');

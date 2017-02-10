@@ -11,7 +11,9 @@ var userSchema = mongoose.Schema({
   pass: {type:String, required:true},
   phone: {type:String, required:true},
   dept: String,
-  classes: Object
+  schedule: Object,
+  is_updated : Boolean,
+  password_reset_code : String
 });
 
 userSchema.pre('save', function(next) {
