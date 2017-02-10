@@ -1,15 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/users');
-var bcrypt = require('bcryptjs');
-
-var isauthenticated = function(req,res,next){
-  if(req.session.user){
-    next();
-  }else {
-    res.redirect('/');
-  }
-};
+var bcrypt = require('bcrypt');
 
 router.post('/signup', function(req, res, next) {
   var newUser = new User({
@@ -27,7 +19,7 @@ router.post('/signup', function(req, res, next) {
       req.session.user.id = user._id;
       req.session.user.name = user.name;
       req.session.user.email = user.email;
-      res.redirect('/update');
+      res.redirect('/updatedetails');
     }
   });
 });
@@ -50,7 +42,7 @@ router.post('/signin',function(req,res,next){
               req.session.user.name = user.name;
               req.session.user.email = user.email;
               res.status=200;
-              res.redirect('/dashboard')
+              res.redirect('/')
             }else{
               res.send("Password doesn't match");
             }
@@ -64,7 +56,7 @@ router.post('/signin',function(req,res,next){
   });
 });
 
-router.get('/signout',isauthenticated,function(req,res,next){
+router.get('/signout',function(req,res,next){
   delete req.session.user;
   res.status=200;
   res.redirect('/');

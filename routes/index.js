@@ -3,14 +3,15 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  if(req.session.user){
+    res.render('dashboard');
+  }
+  else {
+    res.render('index');
+  }
 });
 
-router.get('/dashboard', function(req, res, next) {
-  res.render('dashboard');
-});
-
-router.get('/update', function(req, res, next) {
+router.get('/updatedetails', function(req, res, next) {
   res.render('update');
 });
 
