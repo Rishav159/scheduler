@@ -25,5 +25,16 @@ router.post('/add_new',function(req,res,next){
   })
 
 });
-
+router.get('/render_event/:day/:index',function(req,res,next){
+  User.findById(req.session.user.id,function(err,user){
+    if(err){
+      console.log(err);
+      res.send(err)
+    }else{
+      render_obj = user.schedule[req.params.day][parseInt(req.params.index)];
+      console.log(render_obj);
+      res.render('event_template',render_obj)
+    }
+  })
+})
 module.exports = router;

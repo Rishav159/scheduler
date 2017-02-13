@@ -51,9 +51,9 @@
 			<% for(var j=0;j<today_schedule.length;j++){
 				var now = today_schedule[j];
 			%>
-					<li class="single-event" data-start="<%=now.start_time%>" data-end="<%=now.end_time%>" data-content="event-abs-circuit" data-event="<%=current_day+'_'+j%>">
+					<li class="single-event" data-start="<%=now.start_time%>" data-end="<%=now.end_time%>" data-content="/schedule/render_event/<%=current_day+'/'+j%>" data-event="event-<%=Math.floor((Math.random() * 4) + 1);%>">
 						<a href="#0">
-							<em class="event-name"><%=now.subject%></em>
+							<em class="event-name"><%=now.subject%><br></em>
 						</a>
 					</li>
 			<%
